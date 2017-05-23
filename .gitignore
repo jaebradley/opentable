@@ -101,3 +101,7 @@ ENV/
 .mypy_cache/
 
 .idea/*
+*.pyc
+.coverage
+dist/
+opentable.egg-info
