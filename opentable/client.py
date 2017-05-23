@@ -2,19 +2,23 @@ import requests
 
 
 class OpenTableClient:
+    base_url = "https://opentable.herokuapp.com/api"
+
     def __init__(self):
-        self.base_url = "https://opentable.herokuapp.com/api"
+        pass
 
-    def get_summary_statistics(self):
-        r = requests.get(url="{base_url}/stats".format(base_url=self.base_url))
-
-        r.raise_for_status()
-
-        r.json()
-
-    def get_cities(self):
-        r = requests.get(url="{base_url}/cities".format(base_url=self.base_url))
+    @staticmethod
+    def get_summary_statistics():
+        r = requests.get(url="{base_url}/stats".format(base_url=OpenTableClient.base_url))
 
         r.raise_for_status()
 
-        r.json()
+        return r.json()
+
+    @staticmethod
+    def get_cities():
+        r = requests.get(url="{base_url}/cities".format(base_url=OpenTableClient.base_url))
+
+        r.raise_for_status()
+
+        return r.json()
