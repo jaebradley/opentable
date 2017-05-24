@@ -25,7 +25,7 @@ class OpenTableClient:
 
     def search_restaurants(self, query):
         r = requests.get(url="{base_url}/restaurants".format(base_url=OpenTableClient.base_url),
-                         params=self.restaurant_search_query_parameters_builder.build_query_parameters(query=query))
+                         params=self.restaurant_search_query_parameters_builder.build(query=query))
 
         r.raise_for_status()
 

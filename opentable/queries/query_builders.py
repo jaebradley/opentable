@@ -2,7 +2,7 @@ class RestaurantSearchQueryParametersBuilder:
     def __init__(self):
         pass
 
-    def build_query_parameters(self, query):
+    def build(self, query):
         query_parameters = {}
         if query.price_range is not None:
             query_parameters["price"] = query.price_range.value
