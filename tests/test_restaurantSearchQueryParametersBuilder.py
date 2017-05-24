@@ -3,6 +3,7 @@ from unittest import TestCase
 from opentable.queries.query_builders import RestaurantSearchQueryParametersBuilder
 from opentable.queries.query_parameters import PriceRange, PerPage
 
+
 class MockQuery:
     def __init__(self, price_range=None, name=None, address_line=None, state_code=None, city_name=None, zip_code=None,
                  country_code=None, page=None, per_page=None):
