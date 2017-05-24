@@ -30,6 +30,11 @@ class TestRestaurantSearchQueryParametersBuilder(TestCase):
         query = MockQuery(price_range=price_range)
         self.assertEqual(self.parameters_builder.build(query=query), {"price": price_range.value})
 
+    def test_defined_name(self):
+        name = "name"
+        query = MockQuery(name=name)
+        self.assertEqual(self.parameters_builder.build(query=query), {"name": name})
+
     def test_defined_address_line(self):
         address_line = "address line"
         query = MockQuery(address_line=address_line)
@@ -63,4 +68,4 @@ class TestRestaurantSearchQueryParametersBuilder(TestCase):
     def test_defined_per_page(self):
         per_page = PerPage.ten
         query = MockQuery(per_page=per_page)
-        self.assertEqual(self.parameters_builder.build(query=query), {"per_page", per_page})
+        self.assertEqual(self.parameters_builder.build(query=query), {"per_page": per_page.value})
